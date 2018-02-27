@@ -1,0 +1,5 @@
+<dsl clase="Libro">
+  <campo nombre="autor" tipo="String"/>
+  <campo nombre="titulo" tipo="String"/>
+  <campo nombre="precio" tipo="int"/>
+</dsl>

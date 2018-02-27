@@ -1,0 +1,4 @@
+<dsl clase="Persona">
+  <campo nombre="nombre" tipo="String"/>
+  <campo nombre="edad" tipo="int"/>
+</dsl>

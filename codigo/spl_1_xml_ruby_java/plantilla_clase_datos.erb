@@ -1,0 +1,27 @@
+public class <%= modelo_semantico.nombre_clase %> {
+<% modelo_semantico.campos.each { |campo| %>
+    <%= "private #{campo[1]} #{campo[0]};" %>
+<% } %>
+public <%= modelo_semantico.nombre_clase %> (
+<%
+  i = 0
+  while i<(modelo_semantico.campos.length-1)
+%>
+    <%= "#{modelo_semantico.campos[i][1]} #{modelo_semantico.campos[i][0]}," %>
+<%
+  i = i + 1
+  end %>
+<%= "#{modelo_semantico.campos[i][1]} #{modelo_semantico.campos[i][0]}" %> ) {
+
+<% modelo_semantico.campos.each { |campo| %>
+    <%= "this.#{campo[0]} = #{campo[0]};" %>
+<% } %>
+}
+public String toString() {
+return
+<% modelo_semantico.campos.each { |campo| %>
+    <%= "\"#{campo[0]} = \" + #{campo[0]} + \"\\n\" +" %>
+<% } %>
+"---------------------------------";
+}
+}

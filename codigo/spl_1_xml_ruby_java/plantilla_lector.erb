@@ -1,0 +1,48 @@
+import java.io.*;
+import java.util.*;
+
+public class Lector<%=modelo_semantico.nombre_clase%>s {
+private ArrayList<<%=modelo_semantico.nombre_clase%>> datos = new ArrayList<<%=modelo_semantico.nombre_clase%>>();;
+public ArrayList<<%=modelo_semantico.nombre_clase%>> leerFichero(String ficheroDatos) {
+String linea;
+try {
+BufferedReader buffer = new BufferedReader(new FileReader(ficheroDatos));
+linea = buffer.readLine();
+while (linea != null) {
+procesarLinea(linea);
+linea = buffer.readLine();
+}
+} catch (FileNotFoundException ex) {
+ex.printStackTrace();
+} catch (IOException ex) {
+ex.printStackTrace();
+}
+return datos;
+}
+private void procesarLinea(String linea) {
+Scanner scanner = new Scanner(linea).useDelimiter("\\s*,\\s*");
+<% modelo_semantico.campos.each { |campo|
+  if campo[1] == "int"
+%>
+        <%= "#{campo[1]} #{campo[0]} = scanner.nextInt();" %>
+    <% else %>
+        <%= "#{campo[1]} #{campo[0]} = scanner.next();" %>
+    <% end
+       } %>
+datos.add(new <%=modelo_semantico.nombre_clase%>(
+<%
+  i = 0
+  while i<(modelo_semantico.campos.length-1)
+%>
+    <%= "#{modelo_semantico.campos[i][0]}," %>
+<%
+  i = i + 1
+  end %>
+<%= "#{modelo_semantico.campos[i][0]}" %> ));
+}
+public void imprimir() {
+for( <%=modelo_semantico.nombre_clase%> <%=modelo_semantico.nombre_clase%> : datos ) {
+System.out.println(<%=modelo_semantico.nombre_clase%>);
+}
+}
+}
