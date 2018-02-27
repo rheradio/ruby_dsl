@@ -2,7 +2,7 @@
 
 El propósito de este repositorio es educativo. Se trata de mostrar las prestaciones que ofrece **Ruby** para implementar Lenguajes Específicos de Dominio (Domain Specific Languages, **DSLs**). 
 
-En concreto, el repositorio incluye las transparencias y el código de los ejemplos tratados en los siguientes vídeos:
+En concreto, el repositorio incluye las [transparencias](https://github.com/rheradio/ruby_dsl/tree/master/transparencias) y el [código](https://github.com/rheradio/ruby_dsl/tree/master/codigo) de los ejemplos tratados en los siguientes vídeos:
 
 - [Video 1](http://drago.intecca.uned.es/download/aW50ZWNjYS51bmVkLmVz_67055_1355387794158_20121130_Ruben_Heradio_Tema_1.mp4)
 - [Video 2](http://drago.intecca.uned.es/download/aW50ZWNjYS51bmVkLmVz_67055_1355387794158_20121130_Ruben_Heradio_Tema_1.mp4)
